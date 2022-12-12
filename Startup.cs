@@ -12,6 +12,9 @@ using concilig.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
+using concilig.Interfaces;
+using static consilig.RepositoryAtividades.RepositoryAtividades;
 
 namespace concilig
 {
@@ -27,6 +30,7 @@ namespace concilig
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IAtividade, RepositoryAtividade>();
             services.AddDbContext<Teste>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
