@@ -12,9 +12,4 @@ using concilig.Models;
         {
         }
 
-        public DbSet<concilig.Models.Cliente> Cliente { get; set; }
-
-        public DbSet<concilig.Models.Produto> Produto { get; set; }
-
-        public DbSet<concilig.Models.Contrato> Contrato { get; set; }
     }
